@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "-": "^0.0.1",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "eslint": "8.27.0",
