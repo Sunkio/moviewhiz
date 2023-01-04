@@ -37,10 +37,18 @@ const Home = () => {
       <div className="container">
         <div className="header">
           <div className="header-title">
-            <h1>Movie Night Decision Helper</h1>
+            <h1>MovieWhiz</h1>
           </div>
           <div className="header-subtitle">
-            <h2>Input your movie preferences and hit Generate! Or leave empty and we'll decide your preferences for you. ;)</h2>
+            <h2>Let AI Pick the Perfect Movie - Simply Input Your Prompt & Press "Generate"!</h2>
+            <p>
+                Simply enter your chosen theme, genre, actors and/or who you're gonna watch it with into the prompt
+                 box and let MovieWhiz pick the perfect movie for you.
+            </p>
+            <p>
+              If you don't have any specific preferences, don't worry - simply leave the prompt empty and MovieWhiz will
+              select a movie that you're sure to love!
+            </p>
           </div>
             <div className="prompt-container">
                 <textarea
