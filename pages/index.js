@@ -1,6 +1,4 @@
 import Head from 'next/head';
-import Image from 'next/image';
-import buildspaceLogo from '../assets/buildspace-logo.png';
 import { useState } from 'react';
 
 const Home = () => {
@@ -32,12 +30,12 @@ const Home = () => {
   return (
     <div className="root">
       <Head>
-        <title>GPT-3 Writer | buildspace</title>
+        <title>MovieWhiz</title>
       </Head>
       <div className="container">
         <div className="header">
           <div className="header-title">
-            <h1>MovieWhiz</h1>
+            <h1 className="neon">MovieWhiz</h1>
           </div>
           <div className="header-subtitle">
             <h2>Let AI Pick the Perfect Movie - Simply Input Your Prompt & Press "Generate"!</h2>
@@ -58,7 +56,7 @@ const Home = () => {
                     onChange={(e) => {setUserInput(e.target.value)}}
                 />
             </div>
-            <div className="prompt-buttons">
+            <div className="prompt-buttons ">
                 <a className={isGenerating ? 'generate-button loading' : 'generate-button'} onClick={callGenerateEndpoint}>
                     <div className="generate">
                         {isGenerating ? <span className="loader"></span> : <p>Generate</p>}
@@ -69,7 +67,7 @@ const Home = () => {
                 <div className="output">
                     <div className="output-header-container">
                         <div className="output-header">
-                            <h3>Output</h3>
+                            <h3>Your Recommendation</h3>
                         </div>
                     </div>
                     <div className="output-content">
@@ -78,18 +76,6 @@ const Home = () => {
                 </div>
             )}
         </div>
-      </div>
-      <div className="badge-container grow">
-        <a
-          href="https://buildspace.so/builds/ai-writer"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <div className="badge">
-            <Image src={buildspaceLogo} alt="buildspace logo" />
-            <p>build with buildspace</p>
-          </div>
-        </a>
       </div>
     </div>
   );

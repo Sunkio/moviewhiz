@@ -1,9 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&display=swap');
+@font-face {
+    src: url('../assets/fonts/Oswallt-Solid.woff2') format('woff2');
+    font-family: 'Oswallt';
+}
 
-body {
+@font-face {
+    src: url('../assets/fonts/Spectron.woff2') format('woff2');
+    font-family: 'Spectron';
+}
+
+:root {
+    --system-ui: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
+    --black: #040303;
+    --blue: #63afb7;
+    --green: #8ec296;
+}
+
+html {
     margin: 0;
     padding: 0;
-    font-family: 'Manrope', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Oswallt', sans-serif;
 }
 
 .root {
@@ -50,9 +71,10 @@ body {
 
 .header-title h1 {
     width: 100%;
+    font-family: "Spectron", sans-serif;
     font-weight: 700;
-    font-size: 72px;
-    letter-spacing: -4px;
+    font-size: 5.5em;
+    letter-spacing: 2px;
     line-height: 1.2em;
     text-align: center;
     margin: 0;
@@ -70,6 +92,15 @@ body {
 .header-subtitle p {
     font-size: 1em;
     text-align: left;
+}
+
+.neon {
+    text-shadow: 0 0 10px #00b3ff,
+    0 0 20px #00b3ff,
+    0 0 40px #00b3ff,
+    0 0 80px #00b3ff,
+    0 0 100px #00b3ff,
+    0 0 150px #00b3ff;
 }
 
 .prompt-container {
