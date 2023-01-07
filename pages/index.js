@@ -35,7 +35,7 @@ const Home = () => {
       <div className="container">
         <div className="header">
           <div className="header-title">
-            <h1 className="neon">MovieWhiz</h1>
+            <h1 className="neon-text">MovieWhiz</h1>
           </div>
           <div className="header-subtitle">
             <h2>Let AI Pick the Perfect Movie - Simply Input Your Prompt & Press "Generate"!</h2>
@@ -57,7 +57,7 @@ const Home = () => {
                 />
             </div>
             <div className="prompt-buttons ">
-                <a className={isGenerating ? 'generate-button loading' : 'generate-button'} onClick={callGenerateEndpoint}>
+                <a className={isGenerating ? 'generate-button loading neon-box' : 'generate-button neon-box'} onClick={callGenerateEndpoint}>
                     <div className="generate">
                         {isGenerating ? <span className="loader"></span> : <p>Generate</p>}
                     </div>

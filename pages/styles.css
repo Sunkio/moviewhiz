@@ -12,9 +12,9 @@
 :root {
     --system-ui: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
     "Segoe UI Symbol";
-    --black: #040303;
-    --blue: #63afb7;
-    --green: #8ec296;
+    --black: #0B090A;
+    --blue: #17BEBB;
+    --orange: #FF333A;
 }
 
 html {
@@ -31,7 +31,7 @@ body {
     display: flex;
     place-content: center flex-start;
     align-items: center;
-    background-color: rgb(0, 0, 0);
+    background-color: var(--black);
     flex-flow: column nowrap;
     gap: 10px;
     height: 100vh;
@@ -94,14 +94,15 @@ body {
     text-align: left;
 }
 
-.neon {
-    text-shadow: 0 0 10px #00b3ff,
-    0 0 20px #00b3ff,
-    0 0 40px #00b3ff,
-    0 0 80px #00b3ff,
-    0 0 100px #00b3ff,
-    0 0 150px #00b3ff;
+.neon-text {
+    text-shadow: 0 0 10px var(--blue),
+    0 0 20px var(--blue),
+    0 0 40px var(--blue),
+    0 0 80px var(--blue),
+    0 0 100px var(--blue),
+    0 0 150px var(--blue);
 }
+
 
 .prompt-container {
     place-content: flex-end center;
@@ -116,12 +117,7 @@ body {
 }
 
 .prompt-box {
-    border-bottom-width: 1px;
-    border-color: rgba(255, 255, 255, 0.1);
-    border-left-width: 1px;
-    border-right-width: 1px;
-    border-style: solid;
-    border-top-width: 1px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
     place-content: flex-start;
     align-items: flex-start;
     background-color: rgba(255, 255, 255, 0.05);
@@ -131,7 +127,6 @@ body {
     flex-flow: column nowrap;
     gap: 10px;
     height: 150px;
-    overflow: hidden;
     padding: 20px;
     position: relative;
     width: 610px;
@@ -209,7 +204,7 @@ textarea {
 .generate-button {
     place-content: flex-start;
     align-items: flex-start;
-    background-color: rgb(255, 79, 18);
+    background-color: var(--orange);
     border-radius: 100px;
     display: flex;
     flex: 0 0 auto;
@@ -244,6 +239,7 @@ textarea {
     cursor: default;
 }
 
+/*
 .badge-container {
     display: flex;
     bottom: 20px;
@@ -296,6 +292,8 @@ textarea {
 .badge p {
     margin: 0;
 }
+
+ */
 
 .grow {
     transition: all .2s ease-in-out;
