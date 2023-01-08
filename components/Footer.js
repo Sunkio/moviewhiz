@@ -1,0 +1,20 @@
+import React from 'react';
+function Footer() {
+  return (
+    <footer className="footer">
+      <p className="footer-text">
+        Made with ❤️ by{' '}
+        <a
+          className="footer-link"
+          href="https://find.tanjaschmidt.com" target="_blank">
+          Tanja</a>
+        </p>
+      <p><a className="footer-link" href="">Contact</a></p>
+      <p><a className="footer-link" href="">Legal Disclaimer</a></p>
+      <p className="" id="last">Buy me a <a className="footer-link" href="https://www.buymeacoffee.com/tanjaS" target="_blank">Coffee</a></p>
+    </footer>
+    );
+}
+
+export default Footer;
+

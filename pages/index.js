@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Footer from '../components/Footer';
 import { useState } from 'react';
 
 const Home = () => {
@@ -76,6 +77,7 @@ const Home = () => {
                 </div>
             )}
         </div>
+        <Footer />
       </div>
     </div>
   );

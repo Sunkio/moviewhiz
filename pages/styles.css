@@ -480,3 +480,27 @@ textarea {
         transform: rotate(360deg);
     }
 }
+
+/* Footer */
+
+.footer {
+    color: var(--white);
+    font-size: 0.9em;
+    text-align: center;
+    margin-top: 1em;
+    display: inline;
+
+}
+
+.footer p {
+    display: inline;
+}
+
+.footer p:not(#last) {
+    margin-right: 2em;
+}
+
+.footer-link {
+    color: var(--blue);
+    display: inline;
+}
