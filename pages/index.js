@@ -28,7 +28,7 @@ const Home = () => {
 
 
   return (
-    <div className="root">
+    <div>
       <Head>
         <title>MovieWhiz</title>
       </Head>
@@ -59,7 +59,7 @@ const Home = () => {
             <div className="prompt-buttons ">
                 <a className={isGenerating ? 'generate-button loading neon-box' : 'generate-button neon-box'} onClick={callGenerateEndpoint}>
                     <div className="generate">
-                        {isGenerating ? <span className="loader"></span> : <p>Generate</p>}
+                        {isGenerating ? <span className="loader"></span> : <p className="grow">Generate</p>}
                     </div>
                 </a>
             </div>
@@ -67,7 +67,7 @@ const Home = () => {
                 <div className="output">
                     <div className="output-header-container">
                         <div className="output-header">
-                            <h3>Your Recommendation</h3>
+                            <h2>Your Recommendation</h2>
                         </div>
                     </div>
                     <div className="output-content">

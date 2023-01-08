@@ -1,12 +1,32 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&display=swap');
-@font-face {
-    src: url('../assets/fonts/Oswallt-Solid.woff2') format('woff2');
-    font-family: 'Oswallt';
-}
-
 @font-face {
     src: url('../assets/fonts/Spectron.woff2') format('woff2');
     font-family: 'Spectron';
+}
+
+@font-face {
+    src: url('../assets/fonts/texgyreadventor-regular.woff2') format('woff2');
+    font-family: 'TeX Gyre Adventor';
+    font-weight: normal;
+}
+
+@font-face {
+    src: url('../assets/fonts/texgyreadventor-bold.woff2') format('woff2');
+    font-family: 'TeX Gyre Adventor';
+    font-weight: bold;
+}
+
+@font-face {
+    src: url('../assets/fonts/texgyreadventor-italic.woff2') format('woff2');
+    font-family: 'TeX Gyre Adventor';
+    font-style: italic;
+    font-weight: normal;
+}
+
+@font-face {
+    src: url('../assets/fonts/texgyreadventor-bolditalic.woff2') format('woff2');
+    font-family: 'TeX Gyre Adventor';
+    font-style: italic;
+    font-weight: bold;
 }
 
 :root {
@@ -15,6 +35,11 @@
     --black: #0B090A;
     --blue: #17BEBB;
     --orange: #FF333A;
+    --orange-light: #FF8589;
+    --orange-dark: #FF0000;
+    --red: #CC0007;
+    --red-dark: #A30005;
+    --white: #FFFFFF;
 }
 
 html {
@@ -24,10 +49,11 @@ html {
 }
 
 body {
-    font-family: 'Oswallt', sans-serif;
-}
-
-.root {
+    font-family: 'TeX Gyre Adventor', var(--system-ui), sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    letter-spacing: 1px;
+    line-height: 1.5;
     display: flex;
     place-content: center flex-start;
     align-items: center;
@@ -35,7 +61,7 @@ body {
     flex-flow: column nowrap;
     gap: 10px;
     height: 100vh;
-    overflow: auto;
+
     padding: 0px;
     position: relative;
 }
@@ -46,14 +72,13 @@ body {
     align-items: center;
     flex: 0 0 auto;
     flex-flow: column nowrap;
-    gap: 10px;
+    gap: 10px 64px;
     height: fit-content;
     max-width: 975px;
     overflow: auto;
     padding: 50px;
     position: relative;
     width: auto;
-    gap: 64px;
 }
 
 .header {    
@@ -71,9 +96,8 @@ body {
 
 .header-title h1 {
     width: 100%;
-    font-family: "Spectron", sans-serif;
-    font-weight: 700;
-    font-size: 5.5em;
+    font-family: "Spectron", var(--system-ui), sans-serif;
+    font-size: 6.5em;
     letter-spacing: 2px;
     line-height: 1.2em;
     text-align: center;
@@ -81,7 +105,7 @@ body {
 }
 
 .header-subtitle h2, .header-subtitle p {
-    font-size: 20px;
+    font-size: 1.3em;
     font-style: normal;
     font-weight: 400;
     line-height: 1.4em;
@@ -114,6 +138,8 @@ body {
     height: min-content;
     padding: 0px;
     width: min-content;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
 }
 
 .prompt-box {
@@ -135,9 +161,6 @@ body {
     overflow: auto;
     outline: none;
     resize: none;
-    font-size: 16px;
-    font-style: normal;
-    letter-spacing: 0px;
     line-height: 1.6em;
     text-align: start;
     color: rgba(255, 255, 255, 0.75);
@@ -146,7 +169,12 @@ body {
 }
 
 textarea {
-    font-family: 'Manrope', sans-serif;
+    font-family: "TeX Gyre Adventor", var(--system-ui), sans-serif;
+    font-size: 1em;
+    font-weight: normal;
+    font-style: italic;
+    letter-spacing: 1px;
+    line-height: 0.5;
 }
 
 
@@ -154,7 +182,7 @@ textarea {
     border-color:rgba(255, 255, 255, 0.75)
 }
 
-
+/*
 .prompt-buttons {
     display: flex;
     place-content: center;
@@ -169,7 +197,9 @@ textarea {
     position: relative;
     width: 100%;
 }
+*/
 
+/*
 .key-stroke {
     outline: none;
     display: flex;
@@ -200,11 +230,11 @@ textarea {
 .or p {
     color: rgba(255, 255, 255, 0.25)
 }
-
+*/
 .generate-button {
     place-content: flex-start;
     align-items: flex-start;
-    background-color: var(--orange);
+    background: linear-gradient(to right, var(--red) 0%, var(--red-dark) 70%);
     border-radius: 100px;
     display: flex;
     flex: 0 0 auto;
@@ -213,11 +243,14 @@ textarea {
     height: min-content;
     overflow: hidden;
     padding: 16px 24px;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
     position: relative;
     text-decoration: none;
     width: min-content;
     will-change: transform;
     cursor: pointer;
+
 }
 
 .generate {
@@ -230,7 +263,9 @@ textarea {
 }
 
 .generate p {
-    color: rgb(255, 255, 255);
+    color: var(--white);
+    font-size: 1.1em;
+    font-weight: bold;
     margin: 0;
 }
 
@@ -309,7 +344,6 @@ textarea {
     display: flex;
     flex: 0 0 auto;
     flex-flow: column nowrap;
-    gap: 10px;
     height: min-content;
     max-width: 1200px;
     overflow: hidden;
@@ -323,23 +357,20 @@ textarea {
     display: flex;
     flex: 0 0 auto;
     flex-flow: column nowrap;
-    gap: 16px;
     height: min-content;
     overflow: hidden;
     padding: 0px;
     position: relative;
     width: 100%;
+    margin-top: 0.5em;
 }
 
-.output-header h3 {
-    font-family: "Manrope", serif;
-    font-size: 28px;
+.output-header h2 {
+    font-size: 2em;
     font-style: normal;
-    font-weight: 800;
-    letter-spacing: 0px;
-    line-height: 1.4em;
+    font-weight: bold;
     text-align: start;
-    color: #ffffff;
+    color: var(--white);
     text-decoration: none;
     text-transform: none;
     margin: 0;
@@ -400,16 +431,18 @@ textarea {
     }
 
     .header-title h1 {
-        font-size: 50px;
+        font-size: 15vw;
     }
 
     .header-subtitle h2 {
         text-align: center;
     }
 
+    /*
     .key-stroke, .or {
         display: none;
     }
+    */
 
     .prompt-buttons {
         justify-content: center;
@@ -424,7 +457,6 @@ textarea {
         width: 100%;
     }
 }
-
 
 
  /* Loading ring animation */
