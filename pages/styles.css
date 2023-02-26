@@ -483,13 +483,13 @@ textarea {
 
 
 @media (min-width: 810px) and (max-width: 1199px) {
-    .container {
-        max-width: 600px;
+    .sub-container {
+        max-width: 650px;
         width: 100%;
     }
 
     .prompt-container {
-        max-width: 600px;
+        max-width: 650px;
         width: 100%;
     }
 
@@ -499,13 +499,13 @@ textarea {
 }
 
 @media (max-width: 809px) {
-    .container, .container-contact {
-        max-width: 500px;
+    .sub-container, .container-contact {
+        max-width: 550px;
         width: 100%;
     }
 
     .prompt-container, .form-main {
-        max-width: 500px;
+        max-width: 550px;
         width: 100%;
     }
 
@@ -519,7 +519,7 @@ textarea {
 }
 
 @media (max-width: 600px) {
-    .container {
+    .sub-cd container {
         max-width: 400px;
         width: 100%;
     }
