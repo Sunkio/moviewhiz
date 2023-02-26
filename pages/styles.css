@@ -66,7 +66,7 @@ body {
     position: relative;
 }
 
-.container {
+.container, .sub-container {
     display: flex;
     place-content: center flex-start;
     align-items: center;
@@ -519,7 +519,7 @@ textarea {
 }
 
 @media (max-width: 600px) {
-    .sub-cd container {
+    .sub-container {
         max-width: 400px;
         width: 100%;
     }
