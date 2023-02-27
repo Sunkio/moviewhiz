@@ -6,7 +6,7 @@ function Footer() {
 
       <p><Link className="footer-link " href="/">Home</Link></p>
       <p><Link className="footer-link" href="/contact">Contact</Link></p>
-      <p><Link className="footer-link" href="/legal">Legal Disclaimer</Link></p>
+      <p><Link className="footer-link" href="/impressum">Impressum information</Link></p>
       <p className="footer-text">
         Made with ❤️ by{' '}
         <a

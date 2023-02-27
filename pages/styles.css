@@ -119,7 +119,7 @@ body {
     margin: 0;
 }
 
-.header-subtitle h2, .header-subtitle p {
+.header-subtitle h2, .header-subtitle p, .header-subtitle h3, .header-subtitle ul {
     font-size: 1.3em;
     font-style: normal;
     font-weight: 400;
@@ -128,9 +128,20 @@ body {
     text-align: center;
 }
 
-.header-subtitle p {
+.header-subtitle p, .header-subtitle ul {
     font-size: 1em;
     /*text-align: left;*/
+}
+
+.header-subtitle ul {
+    /*list-style: none;*/
+    padding: 0 30px 10px 30px;
+    text-align: left;
+}
+
+.header-subtitle h3 {
+    margin-top: 34px;
+    font-size: 1.1em;
 }
 
 .neon-text {
@@ -407,7 +418,10 @@ textarea {
     color: rgba(255, 255, 255, 0.5);
 }
 
-
+.source {
+    font-size: 0.7em;
+    margin-top: 30px;
+}
 
 /* Footer */
 
