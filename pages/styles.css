@@ -81,12 +81,23 @@ body {
     width: auto;
 }
 
+.header-link {
+    text-decoration: none;
+    color: var(--white);
+    transition: all 0.2s ease-in-out;
+}
+
+.header-link:hover {
+    text-decoration: underline;
+    color: var(--black);
+}
+
 .header {    
     display: flex;
     flex-direction: column;
     width: 100%;
     align-items: center;
-    color: #FFF
+    color: var(--white);
 }
 
 .header-title {

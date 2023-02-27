@@ -1,5 +1,7 @@
 import Head from 'next/head';
 import Footer from '../components/Footer';
+import Heading from '../components/Heading';
+import Link from "next/link";
 import { useState } from 'react';
 
 const Contact = () => {
@@ -16,7 +18,7 @@ const Contact = () => {
       <div className="container">
         <div className="header">
           <div className="header-title">
-            <h1 className="neon-text">MovieWhiz</h1>
+            <h1 className="neon-text"><Link className="header-link grow" href="/">MovieWhiz</Link></h1>
           </div>
           <div className="header-subtitle">
             <h2>Get In Touch</h2>
