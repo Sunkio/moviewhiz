@@ -92,6 +92,10 @@ body {
     color: var(--black);
 }
 
+.header-link:active {
+    color: var(--orange);
+}
+
 .header {    
     display: flex;
     flex-direction: column;
@@ -413,7 +417,6 @@ textarea {
     text-align: center;
     margin-top: 2.5em;
     display: inline;
-
 }
 
 .footer p {
@@ -427,6 +430,15 @@ textarea {
 .footer-link {
     color: var(--blue);
     display: inline;
+    transition: all .2s ease-in-out;
+}
+
+.footer-link:hover {
+    color: var(--white);
+}
+
+.footer-link:active {
+    color: var(--orange);
 }
 
 /* Contact */
