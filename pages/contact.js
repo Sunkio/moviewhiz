@@ -19,7 +19,7 @@ const Contact = () => {
             message
       }
 
-      fetch('/api/contact', {
+      fetch('/api/handle-contact', {
           method: 'POST',
           headers: {
               'Accept': 'application/json, text/plain, */*',
