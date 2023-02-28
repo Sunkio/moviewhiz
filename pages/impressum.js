@@ -3,7 +3,7 @@ import Footer from '../components/Footer';
 import Heading from '../components/Heading';
 import Head from "next/head";
 
-function Impressum() {
+const Impressum = () => {
   return (
     <div>
         <Head>
