@@ -45,30 +45,26 @@ const Contact = () => {
         <title>MovieWhiz</title>
       </Head>
       <div className="container">
-        <div className="header">
-          <div className="header-title">
-            <h1 className="neon-text"><Link className="header-link grow" href="/">MovieWhiz</Link></h1>
-          </div>
-          <div className="header-subtitle">
-            <h2>Get In Touch</h2>
-          </div>
-        </div>
+        <Heading>{"Get in Touch"}</Heading>
         <div className="contact-container">
           < form className="form-main" >
             < formGroup className="inputGroup" >
               < label htmlFor='name'>Name</label>
-              < input type='text' name='name'onChange={(e)=>{setName(e.target.value)}} className="inputField" />
+              < input type='text' name='name'onChange={(e)=>{setName(e.target.value)}} className="inputField" required/>
             </formGroup>
             < formGroup className="inputGroup" >
               < label htmlFor='email'>Email</label>
-              < input type='email' name='email' onChange={(e)=>{setEmail(e.target.value)}} className="inputField" />
+              < input type='email' name='email' onChange={(e)=>{setEmail(e.target.value)}} className="inputField" required/>
             </formGroup>
             < formGroup className="inputGroup" >
               < label htmlFor='message'>Message</label>
-              < textarea id="message" type='textfield' name='message' onChange={(e)=>{setMessage(e.target.value)}} className="inputField multiline" />
+              < textarea id="message" type='textfield' name='message' onChange={(e)=>{setMessage(e.target.value)}} className="inputField multiline" required />
             </formGroup>
              <input type='submit' onClick={(e)=>{handleSubmit(e)}} className="submit grow"/>
           </form >
+          <div>
+            { submitted ? <p className="success-message">Your message has been sent! We'll get back to you as soon as possible.</p> : null}
+        </div>
         </div>
         <Footer />
       </div>
