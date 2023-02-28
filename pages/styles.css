@@ -154,7 +154,7 @@ body {
 }
 
 
-.prompt-container {
+.prompt-container, .contact-container {
     place-content: flex-end center;
     align-items: center;
     display: flex;
@@ -192,19 +192,51 @@ body {
     color: rgba(255, 255, 255, 0.75);
     text-decoration: none;
     text-transform: none;
+    font-size: 1em;
 }
 
-textarea {
+textarea  {
     font-family: "TeX Gyre Adventor", var(--system-ui), sans-serif;
-    font-size: 1em;
+    /*font-size: 1em;*/
     font-weight: normal;
     font-style: italic;
     letter-spacing: 1px;
     line-height: 0.5;
 }
 
+#message {
+    line-height: 1.2em;
+  background-color: rgba(255, 255, 255, 0.05);
+ color: rgba(255, 255, 255, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+        border-radius: 16px;
+        padding: 20px;
+        /*height: 150px;*/
+}
 
-.prompt-box:focus {
+.inputField {
+  background-color: rgba(255, 255, 255, 0.05);
+ color: rgba(255, 255, 255, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+        border-radius: 16px;
+        padding-left: 20px;
+        padding-right: 20px;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+    transition: background-color 600000s 0s, color 600000s 0s;
+}
+input[data-autocompleted] {
+    background-color: transparent !important;
+}
+
+label {
+    padding: 0 0 0 16px;
+}
+
+
+.prompt-box:focus, #message:focus, .inputField:focus {
     border-color:rgba(255, 255, 255, 0.75)
 }
 
@@ -298,6 +330,27 @@ textarea {
 .loading {
     opacity: 0.7;
     cursor: default;
+}
+
+.submit {
+
+    background: linear-gradient(to right, var(--red) 0%, var(--red-dark) 70%);
+    border-radius: 100px;
+    gap: 10px;
+    height: min-content;
+    overflow: hidden;
+    padding: 16px 24px;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+    position: relative;
+    text-decoration: none;
+    width: min-content;
+    will-change: transform;
+    cursor: pointer;
+    color: var(--white);
+    font-size: 1.1em;
+    font-weight: bold;
+    margin: 0;
 }
 
 /*

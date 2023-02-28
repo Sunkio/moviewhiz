@@ -37,7 +37,6 @@ const Contact = () => {
           setMessage('');
         }
       });
-
   }
 
   return (
@@ -66,9 +65,9 @@ const Contact = () => {
             </formGroup>
             < formGroup className="inputGroup" >
               < label htmlFor='message'>Message</label>
-              < textarea type='textfield' name='message' onChange={(e)=>{setMessage(e.target.value)}} className="inputField multiline" />
+              < textarea id="message" type='textfield' name='message' onChange={(e)=>{setMessage(e.target.value)}} className="inputField multiline" />
             </formGroup>
-            < input type='submit' onClick={(e)=>{handleSubmit(e)}} className="generate generate-button"/>
+             <input type='submit' onClick={(e)=>{handleSubmit(e)}} className="submit grow"/>
           </form >
         </div>
         <Footer />
