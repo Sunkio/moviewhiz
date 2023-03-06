@@ -61,8 +61,7 @@ body {
     flex-flow: column nowrap;
     gap: 10px;
     height: 100vh;
-
-    padding: 0px;
+    padding: 0;
     position: relative;
 }
 
@@ -96,7 +95,7 @@ body {
     color: var(--orange);
 }
 
-.header {    
+.header {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -162,7 +161,7 @@ body {
     flex-flow: column nowrap;
     gap: 16px;
     height: min-content;
-    padding: 0px;
+    padding: 0;
     width: min-content;
     margin-top: 1em;
     margin-bottom: 0.5em;
@@ -206,35 +205,75 @@ textarea  {
 
 #message {
     line-height: 1.2em;
-  background-color: rgba(255, 255, 255, 0.05);
- color: rgba(255, 255, 255, 0.75);
+    background-color: rgba(255, 255, 255, 0.05);
+    color: rgba(255, 255, 255, 0.75);
     border: 1px solid rgba(255, 255, 255, 0.25);
-        border-radius: 16px;
-        padding: 20px;
-        /*height: 150px;*/
+    border-radius: 16px;
+    padding: 20px;
+    /*height: 150px;*/
 }
 
 .inputField {
-  background-color: rgba(255, 255, 255, 0.05);
- color: rgba(255, 255, 255, 0.75);
+    background-color: rgba(255, 255, 255, 0.05);
+    color: rgba(255, 255, 255, 0.75);
     border: 1px solid rgba(255, 255, 255, 0.25);
-        border-radius: 16px;
-        padding-left: 20px;
-        padding-right: 20px;
+    border-radius: 16px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 input:-webkit-autofill,
 input:-webkit-autofill:focus {
     transition: background-color 600000s 0s, color 600000s 0s;
 }
+
 input[data-autocompleted] {
     background-color: transparent !important;
 }
 
-label {
+label, .inputError {
     padding: 0 0 0 16px;
 }
 
+.success-message, .error-message {
+    font-size: 0.8em;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.4em;
+    color: rgba(255, 255, 255, 0.75);
+    text-align: left;
+}
+
+.success-message span {
+  color: green;
+}
+
+.error-message span {
+  color: red;
+}
+
+
+.inputError {
+    color: var(--red);
+    font-size: 0.8em;
+    display: none;
+}
+
+input:not(:focus):not(:placeholder-shown):invalid {
+    border-color: var(--red);
+}
+
+input:not(:focus):not(:placeholder-shown):invalid ~ .inputError {
+    display: block;
+}
+
+input:not(:focus):not(:placeholder-shown):valid {
+  border-color: var(--white);
+}
+
+input:focus:placeholder-shown::after ~ .inputError {
+    display: block;
+}
 
 .prompt-box:focus, #message:focus, .inputField:focus {
     border-color:rgba(255, 255, 255, 0.75)
@@ -333,7 +372,6 @@ label {
 }
 
 .submit {
-
     background: linear-gradient(to right, var(--red) 0%, var(--red-dark) 70%);
     border-radius: 100px;
     gap: 10px;
@@ -350,7 +388,7 @@ label {
     color: var(--white);
     font-size: 1.1em;
     font-weight: bold;
-    margin: 0;
+    /*margin: 0;*/
 }
 
 /*
@@ -648,7 +686,7 @@ ul li {
 }
 
 
- /* Loading ring animation */
+/* Loading ring animation */
 .loader {
     width: 18px;
     height: 18px;
