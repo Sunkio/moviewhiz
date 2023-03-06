@@ -7,6 +7,9 @@ const Contact = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
+  const [nameFocus, setNameFocus] = useState(false);
+    const [emailFocus, setEmailFocus] = useState(false);
+    const [messageFocus, setMessageFocus] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState(false);
 
@@ -22,6 +25,18 @@ const Contact = () => {
     }
   }
 
+  const handleNameFocus = (e) => {
+    setNameFocus(true);
+  }
+
+    const handleEmailFocus = (e) => {
+      setEmailFocus(true);
+    }
+
+    const handleMessageFocus = (e) => {
+      setMessageFocus(true);
+    }
+
   const handleSubmit = async (e) => {
       e.preventDefault();
 
@@ -33,12 +48,13 @@ const Contact = () => {
 
       if (!validateInput(name, "name") || !validateInput(email, "email") || !validateInput(message, "message")  || name === '' || email === '' || message === '') {
         setError(true);
-        //alert("Please fill out all fields.");
         setSubmitted(false);
         return;
       }
-      //alert("Your message has been sent! We'll get back to you as soon as possible.");
       setError(false);
+      setEmailFocus(false);
+        setNameFocus(false);
+        setMessageFocus(false);
       setSubmitted(true);
 
     console.log("Sending email...")
@@ -58,6 +74,9 @@ const Contact = () => {
           setName('');
           setEmail('');
           setMessage('');
+          setNameFocus(false);
+            setEmailFocus(false);
+            setMessageFocus(false);
         }
       });
   }
@@ -71,19 +90,19 @@ const Contact = () => {
         <Heading>{"Get in Touch"}</Heading>
         <div className="contact-container">
           < form className="form-main" id="form-main">
-            < formGroup className="inputGroup" >
+            < formGroup className="inputGroup">
               < label htmlFor='name'>Name</label>
-              < input type='text' name='name' onChange={(e)=>{setName(e.target.value)}} placeholder="Name" pattern={validateInput(name, "name")} id="name" className="inputField" required/>
-              <span className="inputError">Please enter your name.</span>
+              < input type='text' name='name' onChange={(e)=>{setName(e.target.value)}} onBlur={handleNameFocus} placeholder="Name" pattern={validateInput(name, "name")} focused={nameFocus.toString()} className="inputField" id="name" required/>
+              <span className="inputError" id="nameError">Please enter your name.</span>
             </formGroup>
             < formGroup className="inputGroup" >
               < label htmlFor='email'>Email</label>
-              < input type='email' name='email' onChange={(e)=>{setEmail(e.target.value)}} placeholder="jane@example-mail.com" pattern={validateInput(email, "email")} className="inputField" required/>
+              < input type='email' name='email' onChange={(e)=>{setEmail(e.target.value)}} onBlur={handleEmailFocus} placeholder="jane@example-mail.com" pattern={validateInput(email, "email")} focused={emailFocus.toString()} className="inputField" required/>
               <span className="inputError">Please enter a valid email address.</span>
             </formGroup>
             < formGroup className="inputGroup" >
               < label htmlFor='message'>Message</label>
-              < textarea id="message" type='textfield' name='message' onChange={(e)=>{setMessage(e.target.value)}} placeholder="Your Message" pattern={validateInput(message, "message")} className="inputField multiline" required />
+              < textarea id="message" type='textfield' name='message' onChange={(e)=>{setMessage(e.target.value)}} onBlur={handleMessageFocus} placeholder="Your Message" pattern={validateInput(message, "message")} focused={messageFocus.toString()} className="inputField multiline" required />
               <span className="inputError">Please enter a message.</span>
             </formGroup>
              <input type='submit' onClick={(e)=>{handleSubmit(e)}} className="submit grow"/>
@@ -92,7 +111,7 @@ const Contact = () => {
             { submitted ? <p className="success-message"><span>Success!</span> Your message has been sent! We'll get back to you as soon as possible.</p> : null }
           </div>
           <div>
-            { error ? <p className="error-message"><span>Error:</span> Please fill out the form with valid input before submitting.</p> : null}
+            { error ? <p className="error-message"><span>Error:</span> Please fill out the complete form with valid input before submitting.</p> : null}
           </div>
         </div>
         <Footer />

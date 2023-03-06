@@ -259,19 +259,24 @@ label, .inputError {
     display: none;
 }
 
-input:not(:focus):not(:placeholder-shown):invalid {
+input:not(:focus):not(:placeholder-shown):invalid, textarea:not(:focus):not(:placeholder-shown):invalid {
     border-color: var(--red);
 }
 
-input:not(:focus):not(:placeholder-shown):invalid ~ .inputError {
+input:not(:focus):not(:placeholder-shown):invalid ~ .inputError, textarea:not(:focus):not(:placeholder-shown):invalid ~ .inputError {
     display: block;
 }
 
-input:not(:focus):not(:placeholder-shown):valid {
+input:not(:focus):not(:placeholder-shown):valid, textarea:not(:focus):not(:placeholder-shown):valid {
   border-color: var(--white);
 }
 
-input:focus:placeholder-shown::after ~ .inputError {
+/* TODO: textarea red border onBlur (focused="true")*/
+input:invalid[focused="true"], textarea:invalid[focused="true"]{
+    border: 1px solid red;
+}
+
+input:invalid[focused="true"] ~ span, textarea:invalid[focused="true"] ~ span {
     display: block;
 }
 
