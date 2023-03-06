@@ -13,13 +13,13 @@ const Contact = () => {
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState(false);
 
+  //TODO: check regex for message input to allow for special characters
   const validateInput = (input, type) => {
     const emailPat = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
     if (type === "name") {
         return /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/.test(String(input).toLowerCase());
     } else if (type === "message") {
-        return /^[a-zA-Z0-9\s,'-]*$/.test(String(input).toLowerCase());
+        return /^[a-zA-Z0-9\s,'-:)(]*$/.test(String(input).toLowerCase());
     } else if (type === "email") {
         return emailPat.test(String(input).toLowerCase());
     }
@@ -35,6 +35,11 @@ const Contact = () => {
 
     const handleMessageFocus = (e) => {
       setMessageFocus(true);
+    }
+
+    const handleError = (e) => {
+        setError(false);
+        setSubmitted(false);
     }
 
   const handleSubmit = async (e) => {
@@ -92,17 +97,17 @@ const Contact = () => {
           < form className="form-main" id="form-main">
             < formGroup className="inputGroup">
               < label htmlFor='name'>Name</label>
-              < input type='text' name='name' onChange={(e)=>{setName(e.target.value)}} onBlur={handleNameFocus} placeholder="Name" pattern={validateInput(name, "name")} focused={nameFocus.toString()} className="inputField" id="name" required/>
+              < input type='text' name='name' onChange={(e)=>{setName(e.target.value)}} onBlur={handleNameFocus} placeholder="Name" pattern={validateInput(name, "name")} onFocus={handleError} focused={nameFocus.toString()} className="inputField" id="name" required/>
               <span className="inputError" id="nameError">Please enter your name.</span>
             </formGroup>
             < formGroup className="inputGroup" >
               < label htmlFor='email'>Email</label>
-              < input type='email' name='email' onChange={(e)=>{setEmail(e.target.value)}} onBlur={handleEmailFocus} placeholder="jane@example-mail.com" pattern={validateInput(email, "email")} focused={emailFocus.toString()} className="inputField" required/>
+              < input type='email' name='email' onChange={(e)=>{setEmail(e.target.value)}} onBlur={handleEmailFocus} placeholder="jane@example-mail.com" pattern={validateInput(email, "email")} onFocus={handleError} focused={emailFocus.toString()} className="inputField" required/>
               <span className="inputError">Please enter a valid email address.</span>
             </formGroup>
             < formGroup className="inputGroup" >
               < label htmlFor='message'>Message</label>
-              < textarea id="message" type='textfield' name='message' onChange={(e)=>{setMessage(e.target.value)}} onBlur={handleMessageFocus} placeholder="Your Message" pattern={validateInput(message, "message")} focused={messageFocus.toString()} className="inputField multiline" required />
+              < textarea id="message" type='textfield' name='message' onChange={(e)=>{setMessage(e.target.value)}} onBlur={handleMessageFocus} placeholder="Your Message" pattern={validateInput(message, "message")} onFocus={handleError} focused={messageFocus.toString()} className="inputField multiline" required />
               <span className="inputError">Please enter a message.</span>
             </formGroup>
              <input type='submit' onClick={(e)=>{handleSubmit(e)}} className="submit grow"/>
