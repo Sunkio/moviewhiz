@@ -619,7 +619,6 @@ ul li {
     resize: vertical;
 }
 
-
 @media (min-width: 810px) and (max-width: 1199px) {
     .sub-container {
         max-width: 650px;

@@ -7,10 +7,10 @@ const Impressum = () => {
   return (
     <div>
         <Head>
-          <title>MovieWhiz</title>
+          <title>MovieWhiz - Impressum</title>
         </Head>
       <div className="container">
-        <Heading>{ "Impressum Information" }</Heading>
+        <Heading>{ "Impressum - Legal Disclosure" }</Heading>
         <div className="sub-container">
           <div className="header-subtitle">
             <p>The following information (Impressum) is required under German law.</p>
@@ -21,8 +21,8 @@ const Impressum = () => {
             
             <h3>Contact</h3>
             <ul>
-              <li><a href="mailto:moviewhiz@tanjaschmidt.com" className="footer-link">moviewhiz@tanjaschmidt.com</a></li>
-              <li><Link className="footer-link" href="/contact">Contact Form</Link></li>
+              <li><a href="mailto:moviewhiz@tanjaschmidt.com" className="footer-link">moviewhiz@tanjaschmidt.com</a> - or -</li>
+              <li><Link className="footer-link" href="/contact_test">Contact Form</Link></li>
             </ul>
             
             <h3>Online Dispute Resolution website of the EU Commission</h3>
