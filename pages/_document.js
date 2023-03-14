@@ -8,7 +8,7 @@ export default function Document() {
         <meta property="og:description" content="Let AI pick the perfect movie" key="description"/>
         <meta
           property="og:image"
-          content="../public/moviewhiz-og.png"
+          content="https://moviewhiz.xyz/moviewhiz-og.png"
         />
         <meta name="twitter:card" content="summary_large_image"></meta>
       </Head>
