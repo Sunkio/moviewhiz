@@ -8,7 +8,7 @@ export default function Document() {
         <meta property="og:description" content="Let AI pick the perfect movie" key="description"/>
         <meta
           property="og:image"
-          content="https://cdn.buildspace.so/courses/gpt3-writer/project-og.jpg"
+          content="../public/moviewhiz-og.png"
         />
         <meta name="twitter:card" content="summary_large_image"></meta>
       </Head>
