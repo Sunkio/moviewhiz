@@ -8,18 +8,18 @@ const Contact = () => {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const [nameFocus, setNameFocus] = useState(false);
-    const [emailFocus, setEmailFocus] = useState(false);
-    const [messageFocus, setMessageFocus] = useState(false);
+  const [emailFocus, setEmailFocus] = useState(false);
+  const [messageFocus, setMessageFocus] = useState(false);
+  const [messageValid , setMessageValid] = useState(true);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState(false);
 
-  //TODO: check regex for message input to allow for special characters
   const validateInput = (input, type) => {
     const emailPat = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if (type === "name") {
         return /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/.test(String(input).toLowerCase());
     } else if (type === "message") {
-        return /^[a-zA-Z0-9\s,'-:)(]*$/.test(String(input).toLowerCase());
+        return (input.length > 0 && input.length < 3000);
     } else if (type === "email") {
         return emailPat.test(String(input).toLowerCase());
     }
@@ -35,6 +35,9 @@ const Contact = () => {
 
     const handleMessageFocus = (e) => {
       setMessageFocus(true);
+      if (!message) {
+        setMessageValid(false);
+      }
     }
 
     const handleError = (e) => {
@@ -58,8 +61,8 @@ const Contact = () => {
       }
       setError(false);
       setEmailFocus(false);
-        setNameFocus(false);
-        setMessageFocus(false);
+      setNameFocus(false);
+      setMessageFocus(false);
       setSubmitted(true);
 
     console.log("Sending email...")
@@ -80,10 +83,13 @@ const Contact = () => {
           setEmail('');
           setMessage('');
           setNameFocus(false);
-            setEmailFocus(false);
-            setMessageFocus(false);
+          setEmailFocus(false);
+          setMessageFocus(false);
         }
       });
+
+      console.log("Email sent!")
+      document.getElementById("form-main").reset();
   }
 
   return (
@@ -107,7 +113,7 @@ const Contact = () => {
             </formGroup>
             < formGroup className="inputGroup" >
               < label htmlFor='message'>Message</label>
-              < textarea id="message" type='textfield' name='message' onChange={(e)=>{setMessage(e.target.value)}} onBlur={handleMessageFocus} placeholder="Your Message" pattern={validateInput(message, "message")} onFocus={handleError} focused={messageFocus.toString()} className="inputField multiline" required />
+              < textarea id="message" type='textfield' name='message' onChange={(e)=>{setMessage(e.target.value)}} onBlur={handleMessageFocus} placeholder="Your Message" pattern={validateInput(message, "message")} onFocus={handleError} focused={messageFocus.toString()} className={ messageValid ? 'inputField multiline' : 'msg-invalid inputField multiline'} required />
               <span className="inputError">Please enter a message.</span>
             </formGroup>
              <input type='submit' onClick={(e)=>{handleSubmit(e)}} className="submit grow"/>

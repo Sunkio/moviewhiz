@@ -7,10 +7,10 @@ const Home = () => {
   const [apiOutput, setApiOutput] = useState('')
   const [isGenerating, setIsGenerating] = useState(false)
 
-  const callGenerateEndpoint = async () => {
+const callGenerateEndpoint = async () => {
     setIsGenerating(true);
 
-    console.log("Calling OpenAI...")
+    console.log("Calling OpenAI...");
     const response = await fetch('/api/generate', {
       method: 'POST',
       headers: {
@@ -19,13 +19,19 @@ const Home = () => {
       body: JSON.stringify({ userInput }),
     });
 
-    const data = await response.json();
-    const { output } = data;
-    console.log("OpenAI replied...", output.text)
+    if (response.ok) {
+        const data = await response.json();
+        const { output } = data;
+        console.log("OpenAI replied...", output)
 
-    setApiOutput(`${output.text}`);
+        setApiOutput(`${output}`);
+    } else {
+        const errorData = await response.json();
+        console.error("Error from the server:", errorData);
+        setApiOutput("An error occurred. Please try again.");
+    }
     setIsGenerating(false);
-  }
+};
 
   return (
     <div>
