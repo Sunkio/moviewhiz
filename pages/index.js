@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Footer from '../components/Footer';
+import GenerateButton from '../components/GenerateButton'; 
 import { useState } from 'react';
 
 const Home = () => {
@@ -61,12 +62,11 @@ const callGenerateEndpoint = async () => {
                     onChange={(e) => {setUserInput(e.target.value)}}
                   />
                 </div>
-                <div className="prompt-buttons ">
-                  <a className={isGenerating ? 'generate-button loading neon-box' : 'generate-button neon-box'} onClick={callGenerateEndpoint}>
-                    <div className="generate">
-                      {isGenerating ? <span className="loader"></span> : <p className="grow">Generate</p>}
-                    </div>
-                  </a>
+                <div className="prompt-buttons">
+                  <GenerateButton
+                    isGenerating={isGenerating}
+                    onClick={callGenerateEndpoint}
+                  />
                 </div>
               {apiOutput && (
                 <div className="output">

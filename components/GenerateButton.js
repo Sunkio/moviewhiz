@@ -11,7 +11,7 @@ const GenerateButton = ({
           isGenerating
             ? 'generate-button loading neon-box'
             : 'generate-button neon-box'
-        } ${additionalClass}`}
+        }`}
         onClick={onClick}
       >
         <div className="generate">
