@@ -129,11 +129,9 @@ body {
 
 .header-subtitle p, .header-subtitle ul {
     font-size: 1em;
-    /*text-align: left;*/
 }
 
 .header-subtitle ul {
-    /*list-style: none;*/
     padding: 0 30px 10px 30px;
     text-align: left;
 }
@@ -196,7 +194,6 @@ body {
 
 textarea  {
     font-family: "TeX Gyre Adventor", var(--system-ui), sans-serif;
-    /*font-size: 1em;*/
     font-weight: normal;
     font-style: italic;
     letter-spacing: 1px;
@@ -210,7 +207,6 @@ textarea  {
     border: 1px solid rgba(255, 255, 255, 0.25);
     border-radius: 16px;
     padding: 20px;
-    /*height: 150px;*/
 }
 
 .inputField {
@@ -283,25 +279,6 @@ label, .inputError {
     cursor: default;
 }
 
-.submit {
-    background: linear-gradient(to right, var(--red) 0%, var(--red-dark) 70%);
-    border-radius: 100px;
-    gap: 10px;
-    height: min-content;
-    overflow: hidden;
-    padding: 16px 24px;
-    margin-top: 0.5em;
-    margin-bottom: 1em;
-    position: relative;
-    text-decoration: none;
-    width: min-content;
-    will-change: transform;
-    cursor: pointer;
-    color: var(--white);
-    font-size: 1.1em;
-    font-weight: bold;
-}
-
 .grow {
     transition: all .2s ease-in-out;
 }
@@ -351,7 +328,6 @@ label, .inputError {
 .output-content {
     outline: none;
     display: flex;
-    /* max-width: 25%; */
     flex-direction: column;
     justify-content: flex-start;
     flex-shrink: 0;
@@ -507,8 +483,7 @@ input:not(:focus):not(:placeholder-shown):valid, textarea:not(:focus):not(:place
 }
 
 /* TODO: textarea red border onBlur (focused="true")*/
-input:invalid[focused="true"], .msg-invalid {
-    /*border: 1px solid var(--red);*/
+input:invalid[focused="true"], .msg-invalid, #message:invalid[focused="true"] {
     border-color: var(--red);
     
 }
@@ -574,12 +549,6 @@ input:invalid[focused="true"] ~ span, textarea:invalid[focused="true"] ~ span {
         text-align: center;
     }
 
-    /*
-    .key-stroke, .or {
-        display: none;
-    }
-    */
-
     .prompt-buttons {
         justify-content: center;
     }
@@ -601,7 +570,7 @@ input:invalid[focused="true"] ~ span, textarea:invalid[focused="true"] ~ span {
     height: 18px;
     border-radius: 50%;
     display: inline-block;
-    border-top: 2px solid #FFF;
+    border-top: 2px solid var(--white);
     border-right: 2px solid transparent;
     box-sizing: border-box;
     animation: rotation 1s linear infinite;
