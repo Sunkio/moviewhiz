@@ -585,3 +585,36 @@ input:invalid[focused="true"] ~ span, textarea:invalid[focused="true"] ~ span {
         transform: rotate(360deg);
     }
 }
+
+/* Loading message color and animation */
+.loading-message {
+    color: var(--blue);
+}
+
+.typing-animation {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  white-space: nowrap; /* Keeps the content on a single line */
+  letter-spacing: 0.1em; /* Adjust letter spacing for the desired effect */
+  animation: typing 6s steps(40, end) infinite, blinking-caret 0.5s step-end infinite 3s;
+}
+
+/* The typing effect */
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  80%, 100% {
+    width: 100%;
+  }
+}
+
+/* The typewriter cursor effect */
+@keyframes blinking-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: inherit;
+  }
+}
