@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Footer from '../components/Footer';
 import GenerateButton from '../components/GenerateButton'; 
+import LoadingMessage from '../components/LoadingMessage';
 import { useState } from 'react';
 
 const Home = () => {
@@ -68,17 +69,21 @@ const callGenerateEndpoint = async () => {
                     onClick={callGenerateEndpoint}
                   />
                 </div>
-              {apiOutput && (
-                <div className="output">
-                  <div className="output-header-container">
-                    <div className="output-header">
-                      <h2>Your Recommendation</h2>
+                {isGenerating ? (
+                  <LoadingMessage />
+                ) : (
+                  apiOutput && (
+                    <div className="output">
+                      <div className="output-header-container">
+                        <div className="output-header">
+                          <h2>Your Recommendation</h2>
+                        </div>
+                      </div>
+                      <div className="output-content">
+                        <p>{apiOutput}</p>
+                      </div>
                     </div>
-                  </div>
-                  <div className="output-content">
-                    <p>{apiOutput}</p>
-                  </div>
-                </div>
+                  )
               )}
             </div>
         </div>
