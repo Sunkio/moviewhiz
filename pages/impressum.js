@@ -10,7 +10,7 @@ const Impressum = () => {
           <title>MovieWhiz - Impressum</title>
         </Head>
       <div className="container">
-        <Heading>{ "Impressum - Legal Disclosure" }</Heading>
+        <Heading>{ "Impressum - Legal" }</Heading>
         <div className="sub-container">
           <div className="header-subtitle">
             <p>The following information (Impressum) is required under German law.</p>
