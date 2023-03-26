@@ -2,20 +2,16 @@ const GenerateButton = ({
   isGenerating,
   onClick,
   buttonText = 'Generate',
-  disableLoading = false,
+  disableLoading,
 }) => {
   return (
     <div className="generate-button-container">
       <a
-        className={`${
-          isGenerating
-            ? 'generate-button loading neon-box'
-            : 'generate-button neon-box'
-        }`}
-        onClick={onClick}
+        className={`generate-button neon-box ${isGenerating ? "loading" : ""}`}
+        onClick={!isGenerating ? onClick : undefined}
       >
         <div className="generate">
-          {isGenerating ? (
+          {isGenerating && !disableLoading ? (
             <span className="loader"></span>
           ) : (
             <p className="grow">{buttonText}</p>

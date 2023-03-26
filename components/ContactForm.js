@@ -159,6 +159,7 @@ const ContactForm = () => {
           isGenerating={submitted}
           onClick={(e) => handleSubmit(e)}
           buttonText="Submit"
+          disableLoading={true}
 
         />
       </div>
