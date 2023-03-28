@@ -538,6 +538,7 @@ input:invalid[focused="true"] ~ span, textarea:invalid[focused="true"] ~ span {
 
 @media (max-width: 600px) {
     .container {
+        max-width: 400px;
         width: 100%;
     }
     .sub-container {
