@@ -554,11 +554,11 @@ input:invalid[focused="true"] ~ span, textarea:invalid[focused="true"] ~ span {
     }
 
     .legal {
-        width: 70%;
+        width: 77%;
     }
 
     .footer-legal-sm {
-        width: 70%;
+        width: 77%;
     }
 
     .prompt-buttons {
