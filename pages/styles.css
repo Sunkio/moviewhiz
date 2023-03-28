@@ -554,7 +554,7 @@ input:invalid[focused="true"] ~ span, textarea:invalid[focused="true"] ~ span {
     }
 
     .legal {
-        width: 100%;
+        width: 80%;
     }
 
     .prompt-buttons {
