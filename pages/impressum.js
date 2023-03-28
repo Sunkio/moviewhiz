@@ -12,7 +12,7 @@ const Impressum = () => {
       <div className="container">
         <Heading>{ "Impressum - Legal" }</Heading>
         <div className="sub-container">
-          <div className="header-subtitle">
+          <div className="header-subtitle legal">
             <p>The following information (Impressum) is required under German law.</p>
             <ul>
               <li>Tanja Schmidt</li>
