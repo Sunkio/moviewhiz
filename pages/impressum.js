@@ -11,14 +11,14 @@ const Impressum = () => {
         </Head>
       <div className="container">
         <Heading>{ "Impressum - Legal" }</Heading>
-        <div className="sub-container">
+        <div className="sub-container legal">
           <div className="header-subtitle">
             <p>The following information (Impressum) is required under German law.</p>
             <ul>
               <li>Tanja Schmidt</li>
               <li>Barkhausenstr. 34, 27568 Bremerhaven, Germany</li>
             </ul>
-            <div className="legal">
+            <div className="">
               <h3>Contact</h3>
               <ul>
                 <li><a href="mailto:moviewhiz@tanjaschmidt.com" className="footer-link">moviewhiz@tanjaschmidt.com</a> - or -</li>
