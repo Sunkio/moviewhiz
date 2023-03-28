@@ -26,7 +26,7 @@ const Impressum = () => {
             </ul>
             
             <h3>Online Dispute Resolution website of the EU Commission</h3>
-            <p>TIn order for consumers and traders to resolve a dispute out-of-court, the European Commission developed the Online Dispute Resolution Website: <a href="https://ec.europa.eu/consumers/odr" className="footer-link">https://ec.europa.eu/consumers/odr</a></p>
+            <p>In order for consumers and traders to resolve a dispute out-of-court, the European Commission developed the Online Dispute Resolution Website: <a href="https://ec.europa.eu/consumers/odr" className="footer-link">https://ec.europa.eu/consumers/odr</a></p>
             <p>We are neither willing nor obligated to participate in dispute resolution proceedings before a consumer dispute resolution body.</p>
 
             <h3>Legal Disclaimer</h3>

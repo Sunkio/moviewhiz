@@ -542,6 +542,10 @@ input:invalid[focused="true"] ~ span, textarea:invalid[focused="true"] ~ span {
         width: 100%;
     }
 
+    .header-subtitle {
+        width: 100%;
+    }
+
     .header-title h1 {
         font-size: 15vw;
     }
