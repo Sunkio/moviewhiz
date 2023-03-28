@@ -2,7 +2,7 @@ import Link from "next/link";
 
 function Footer() {
   return (
-    <footer className="footer">
+    <footer className="footer footer-legal-sm">
 
       <p><Link className="footer-link " href="/">Home</Link></p>
       <p><Link className="footer-link" href="/contact">Contact</Link></p>

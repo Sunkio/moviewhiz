@@ -557,6 +557,10 @@ input:invalid[focused="true"] ~ span, textarea:invalid[focused="true"] ~ span {
         width: 80%;
     }
 
+    .footer-legal-sm {
+        width: 80%;
+    }
+
     .prompt-buttons {
         justify-content: center;
     }
