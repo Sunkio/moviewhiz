@@ -298,10 +298,11 @@ label, .inputError {
     flex: 0 0 auto;
     flex-flow: column nowrap;
     height: min-content;
-    max-width: 1200px;
+    /*max-width: 1200px;*/
     overflow: hidden;
     position: relative;
-    width: 100%;
+    /*width: 100%;*/
+    max-width: 75%;
 }
 
 .output-header-container {
@@ -601,6 +602,7 @@ input:invalid[focused="true"] ~ span, textarea:invalid[focused="true"] ~ span {
 /* Loading message color and animation */
 .loading-message {
     color: var(--blue);
+    max-width: 75%;
 }
 
 .typing-animation {
