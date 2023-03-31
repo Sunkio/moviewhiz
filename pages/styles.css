@@ -107,11 +107,6 @@ body {
     color: var(--white);
 }
 
-.header-container, .prompt-wrapper {
-    max-width: 100%;
-    margin: 0 auto;
-}
-
 .header-title {
     display: flex;
     gap: 12px;
