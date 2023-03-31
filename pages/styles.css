@@ -557,9 +557,7 @@ input:invalid[focused="true"] ~ span, textarea:invalid[focused="true"] ~ span {
         padding: 0 15px;
     }
 
-    .output-content {
-        word-wrap: break-word;
-    }
+
 
     .header-title h1 {
         font-size: 15vw;
