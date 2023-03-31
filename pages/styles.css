@@ -555,14 +555,14 @@ input:invalid[focused="true"] ~ span, textarea:invalid[focused="true"] ~ span {
     .sub-container {
         max-width: 400px;
         width: 100%;
-    }
-
-
-
-    .output {
         margin: 0 auto;
-        padding: 0 15px;
     }
+
+    .header-container, .prompt-wrapper {
+        margin: 0 auto;
+    }
+
+
 
     .output-content {
         word-wrap: break-word;
