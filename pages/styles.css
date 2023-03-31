@@ -563,8 +563,10 @@ input:invalid[focused="true"] ~ span, textarea:invalid[focused="true"] ~ span {
         padding: 0 15px;
     }
 
+
     .output-content {
         word-wrap: break-word;
+        padding: 0 15px;
     }
 
     .header-title h1 {
@@ -590,6 +592,7 @@ input:invalid[focused="true"] ~ span, textarea:invalid[focused="true"] ~ span {
 
     .prompt-box {
         width: 100%;
+        padding: 0 15px;
     }
 }
 
