@@ -552,9 +552,9 @@ input:invalid[focused="true"] ~ span, textarea:invalid[focused="true"] ~ span {
         width: 100%;
     }
 
-    .output {
+    .output p {
         margin: 0 auto;
-        padding: 0 15px;
+        padding: 0 5px;
     }
 
 
@@ -563,7 +563,7 @@ input:invalid[focused="true"] ~ span, textarea:invalid[focused="true"] ~ span {
         font-size: 15vw;
     }
 
-    .header-subtitle h2 {
+    .header-subtitle h2, .output-header h2 {
         text-align: center;
     }
 
