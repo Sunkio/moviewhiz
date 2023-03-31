@@ -342,6 +342,7 @@ label, .inputError {
     justify-content: flex-start;
     flex-shrink: 0;
     transform: none;
+    max-width: 100%;
 }
 
 .output-content p {
