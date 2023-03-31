@@ -83,7 +83,6 @@ body {
     padding: 50px;
     position: relative;
     width: auto;
-    max-width: 100%;
 }
 
 .header-link {
@@ -582,6 +581,7 @@ input:invalid[focused="true"] ~ span, textarea:invalid[focused="true"] ~ span {
 
     .output {
         padding: 0 15px;
+        max-width: 400px;
     }
 
     .output-content {
