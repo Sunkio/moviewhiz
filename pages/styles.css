@@ -546,9 +546,9 @@ input:invalid[focused="true"] ~ span, textarea:invalid[focused="true"] ~ span {
 }
 
 @media (max-width: 600px) {
-    .sub-container {
+    .sub-container, .output, .output-header-container {
         max-width: 400px;
-        width: 75%;
+        width: 100%;
     }
 
     .header-title h1 {
@@ -559,11 +559,7 @@ input:invalid[focused="true"] ~ span, textarea:invalid[focused="true"] ~ span {
         text-align: center;
     }
 
-    .legal {
-        width: 75%;
-    }
-
-    .footer-legal-sm {
+    .legal, footer-legel-sm {
         width: 75%;
     }
 
