@@ -2,15 +2,19 @@ import Head from 'next/head';
 import Footer from '../components/Footer';
 import GenerateButton from '../components/GenerateButton'; 
 import LoadingMessage from '../components/LoadingMessage';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 
 const Home = () => {
   const [userInput, setUserInput] = useState('');
-  const [apiOutput, setApiOutput] = useState('')
-  const [isGenerating, setIsGenerating] = useState(false)
+  const [apiOutput, setApiOutput] = useState('');
+  const [isGenerating, setIsGenerating] = useState(false);
 
-const callGenerateEndpoint = async () => {
+  const loadingMessageRef = useRef(null);
+
+  const callGenerateEndpoint = async () => {
     setIsGenerating(true);
+
+    loadingMessageRef.current.scrollIntoView({ behavior: 'smooth' });
 
     console.log("Calling OpenAI...");
     const response = await fetch('/api/generate', {
@@ -69,6 +73,7 @@ const callGenerateEndpoint = async () => {
                     onClick={callGenerateEndpoint}
                   />
                 </div>
+                <div ref={loadingMessageRef}>
                 {isGenerating ? (
                   <LoadingMessage />
                 ) : (
@@ -85,6 +90,7 @@ const callGenerateEndpoint = async () => {
                     </div>
                   )
               )}
+                </div>
             </div>
         </div>
         <Footer />
