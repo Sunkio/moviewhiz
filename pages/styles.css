@@ -69,7 +69,7 @@ body {
     overflow-x: hidden;
 }
 
-.container, .sub-container {
+.container, .sub-container, .output, .output-header-container {
     display: flex;
     place-content: center flex-start;
     align-items: center;
@@ -291,6 +291,7 @@ label, .inputError {
     transform: scale(1.1);
 }
 
+/*
 .output {
     place-content: center flex-start;
     align-items: center;
@@ -298,10 +299,11 @@ label, .inputError {
     flex: 0 0 auto;
     flex-flow: column nowrap;
     height: min-content;
-    /*max-width: 1200px;*/
-    overflow: hidden;
+    /*max-width: 1200px;
+    overflow: auto;
+    overflow-wrap: normal;
     position: relative;
-    /*width: 100%;*/
+    /*width: 100%;
     max-width: 75%;
 }
 
@@ -312,18 +314,19 @@ label, .inputError {
     flex: 0 0 auto;
     flex-flow: column nowrap;
     height: min-content;
-    overflow: hidden;
+    overflow: auto;
     padding: 0px;
     position: relative;
     width: 100%;
     margin-top: 0.5em;
 }
+*/
 
 .output-header h2 {
     font-size: 2em;
     font-style: normal;
     font-weight: bold;
-    text-align: start;
+    text-align: center;
     color: var(--white);
     text-decoration: none;
     text-transform: none;
@@ -543,7 +546,7 @@ input:invalid[focused="true"] ~ span, textarea:invalid[focused="true"] ~ span {
 @media (max-width: 600px) {
     .sub-container {
         max-width: 400px;
-        width: 100%;
+        width: 75%;
     }
 
     .header-title h1 {
