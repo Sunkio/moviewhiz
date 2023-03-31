@@ -69,7 +69,7 @@ body {
     overflow-x: hidden;
 }
 
-.container, .sub-container, .output, .output-header-container {
+.container, .sub-container, .output {
     display: flex;
     place-content: center flex-start;
     align-items: center;
@@ -546,9 +546,18 @@ input:invalid[focused="true"] ~ span, textarea:invalid[focused="true"] ~ span {
 }
 
 @media (max-width: 600px) {
-    .sub-container, .output, .output-header-container {
+    .sub-container {
         max-width: 400px;
         width: 100%;
+    }
+
+    .output {
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+
+    .output-content {
+        word-wrap: break-word;
     }
 
     .header-title h1 {
@@ -559,7 +568,7 @@ input:invalid[focused="true"] ~ span, textarea:invalid[focused="true"] ~ span {
         text-align: center;
     }
 
-    .legal, footer-legel-sm {
+    .legal, .footer-legal-sm {
         width: 75%;
     }
 
