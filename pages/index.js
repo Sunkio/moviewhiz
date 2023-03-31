@@ -45,7 +45,7 @@ const Home = () => {
         <title>MovieWhiz</title>
       </Head>
       <div className="container">
-        <div className="header">
+        <div className="header header-container">
           <div className="header-title">
             <h1 className="neon-text">MovieWhiz</h1>
           </div>
@@ -59,7 +59,7 @@ const Home = () => {
                   If you don't have any specific preferences, don't worry - simply leave the prompt empty and MovieWhiz will select a movie that you're sure to love!
                 </p>
               </div>
-                <div className="prompt-container">
+                <div className="prompt-container prompt-wrapper">
                   <textarea
                     className="prompt-box"
                     placeholder="a rom-com with a deeper meaning that impresses my mother-in-law"

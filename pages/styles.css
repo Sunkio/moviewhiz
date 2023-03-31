@@ -107,6 +107,11 @@ body {
     color: var(--white);
 }
 
+.header-container, .prompt-wrapper {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
 .header-title {
     display: flex;
     gap: 12px;
@@ -552,12 +557,16 @@ input:invalid[focused="true"] ~ span, textarea:invalid[focused="true"] ~ span {
         width: 100%;
     }
 
+
+
     .output {
         margin: 0 auto;
         padding: 0 15px;
     }
 
-
+    .output-content {
+        word-wrap: break-word;
+    }
 
     .header-title h1 {
         font-size: 15vw;
@@ -576,7 +585,7 @@ input:invalid[focused="true"] ~ span, textarea:invalid[focused="true"] ~ span {
     }
 
     .prompt-container {
-        /*max-width: 400px;*/
+        max-width: 400px;
         width: 100%;
     }
 
