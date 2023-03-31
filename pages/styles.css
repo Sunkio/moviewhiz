@@ -200,6 +200,7 @@ body {
     text-decoration: none;
     text-transform: none;
     font-size: 1em;
+    box-sizing: border-box;
 }
 
 textarea  {
@@ -294,6 +295,10 @@ label, .inputError {
 
 .grow:hover {
     transform: scale(1.1);
+}
+
+.output {
+    box-sizing: border-box;
 }
 
 /*
@@ -557,28 +562,12 @@ input:invalid[focused="true"] ~ span, textarea:invalid[focused="true"] ~ span {
         width: 100%;
     }
 
-
-    .output {
-       /* margin: 0 auto;*/
-        padding: 0 15px;
-    }
-
-
-    .output-content {
-        word-wrap: break-word;
-        padding: 0 15px;
-    }
-
     .header-title h1 {
         font-size: 15vw;
     }
 
     .header-subtitle h2 {
         text-align: center;
-    }
-
-    .legal, .footer-legal-sm {
-        width: 75%;
     }
 
     .prompt-buttons {
@@ -592,7 +581,19 @@ input:invalid[focused="true"] ~ span, textarea:invalid[focused="true"] ~ span {
 
     .prompt-box {
         width: 100%;
+    }
+
+    .output {
         padding: 0 15px;
+    }
+
+    .output-content {
+        word-wrap: break-word;
+        padding: 0 15px;
+    }
+
+    .legal, .footer-legal-sm {
+        width: 75%;
     }
 }
 
