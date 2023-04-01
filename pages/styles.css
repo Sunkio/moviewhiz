@@ -61,7 +61,7 @@ body {
     background-color: var(--black);
     flex-flow: column nowrap;
     gap: 10px;
-    /*height: 100vh;*/
+    height: 100vh;
     padding: 0;
     margin: 0;
     position: relative;
@@ -561,7 +561,7 @@ input:invalid[focused="true"] ~ span, textarea:invalid[focused="true"] ~ span {
     .header-title h1 {
         font-size: 15vw;
     }
-
+/*
     .header-subtitle h2 {
         text-align: center;
     }
@@ -569,6 +569,8 @@ input:invalid[focused="true"] ~ span, textarea:invalid[focused="true"] ~ span {
     .prompt-buttons {
         justify-content: center;
     }
+    */
+
 
     .prompt-container {
         max-width: 400px;
