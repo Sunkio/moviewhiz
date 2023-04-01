@@ -4,7 +4,6 @@ export default function Document() {
   return (
     <Html>
       <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum.scale=1.0, user-scalable=no" />
         <meta property="og:title" content="MovieWhiz" key="title"/>
         <meta property="og:description" content="Let AI pick the perfect movie for you - simply enter your prompt and press generate" key="description"/>
         <meta
