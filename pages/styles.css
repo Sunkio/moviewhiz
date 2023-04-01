@@ -554,7 +554,7 @@ input:invalid[focused="true"] ~ span, textarea:invalid[focused="true"] ~ span {
 
 @media (max-width: 600px) {
     .sub-container {
-        max-width: 370px;
+        max-width: 360px;
         width: 100%;
     }
 
@@ -573,25 +573,25 @@ input:invalid[focused="true"] ~ span, textarea:invalid[focused="true"] ~ span {
 
 
     .prompt-container {
-        max-width: 370px;
+        max-width: 360px;
        /* width: 100%;*/
     }
 
     .prompt-box {
-        max-width: 370px;
+        max-width: 360px;
         /*width: 100%;*/
     }
 
     .output {
         padding: 0 15px;
-        max-width: 370px;
+        max-width: 360px;
         /*width: 100%;*/
     }
 
     .output-content {
         word-wrap: break-word;
         padding: 0 15px;
-        max-width: 370px;
+        max-width: 360px;
 
     }
 
