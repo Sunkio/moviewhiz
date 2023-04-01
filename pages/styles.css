@@ -583,6 +583,7 @@ input:invalid[focused="true"] ~ span, textarea:invalid[focused="true"] ~ span {
     .output {
         padding: 0 15px;
         max-width: 400px;
+        width: 100%;
     }
 
     .output-content {
