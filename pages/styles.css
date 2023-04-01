@@ -557,10 +557,22 @@ input:invalid[focused="true"] ~ span, textarea:invalid[focused="true"] ~ span {
         max-width: 400px;
         width: 100%;
     }
-
+/*
     .header-title h1 {
         font-size: 15vw;
     }
+*/
+      .container, .sub-container, .output {
+    padding: 30px;
+  }
+
+  .header-title h1 {
+    font-size: 10vw;
+  }
+
+  .header-subtitle h2, .header-subtitle p, .header-subtitle h3, .header-subtitle ul {
+    font-size: 1em;
+  }
 
     .header-subtitle h2 {
         text-align: center;
@@ -581,7 +593,7 @@ input:invalid[focused="true"] ~ span, textarea:invalid[focused="true"] ~ span {
     }
 
     .output {
-        padding: 0 15px;
+       /* padding: 0 15px;*/
         max-width: 400px;
         /*width: 100%;*/
     }
