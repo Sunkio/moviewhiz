@@ -184,8 +184,7 @@ body {
     height: 150px;
     padding: 20px;
     position: relative;
-    /*width: 610px;*/
-    width: 100%;
+    width: 610px;
     max-width: 1200px;
     will-change: transform;
     overflow: auto;
