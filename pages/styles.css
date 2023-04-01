@@ -572,25 +572,25 @@ input:invalid[focused="true"] ~ span, textarea:invalid[focused="true"] ~ span {
 
     .prompt-container {
         max-width: 400px;
-        width: 100%;
+       /* width: 100%;*/
     }
 
     .prompt-box {
         max-width: 400px;
-        width: 100%;
+        /*width: 100%;*/
     }
 
     .output {
         padding: 0 15px;
         max-width: 400px;
-        width: 100%;
+        /*width: 100%;*/
     }
 
     .output-content {
         word-wrap: break-word;
         padding: 0 15px;
         max-width: 380px;
-        width: 100%;
+
     }
 
     .legal, .footer-legal-sm {
