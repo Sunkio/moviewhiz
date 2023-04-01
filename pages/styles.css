@@ -297,39 +297,6 @@ label, .inputError {
     box-sizing: border-box;
 }
 
-/*
-.output {
-    place-content: center flex-start;
-    align-items: center;
-    display: flex;
-    flex: 0 0 auto;
-    flex-flow: column nowrap;
-    height: min-content;
-    /*max-width: 1200px;
-    overflow: auto;
-    overflow-wrap: normal;
-    position: relative;
-    /*width: 100%;
-    max-width: 75%;
-}
-
-.output-header-container {
-    place-content: center;
-    align-items: center;
-    display: flex;
-    flex: 0 0 auto;
-    flex-flow: column nowrap;
-    height: min-content;
-    overflow: auto;
-    padding: 0px;
-    position: relative;
-    width: 100%;
-    margin-top: 0.5em;
-}
-*/
-
-
-
 .output-header h2 {
     font-size: 2em;
     font-style: normal;
@@ -442,7 +409,7 @@ ul li {
     overflow: hidden;
     position: relative;
     color: var(--white);
-    justify-content: center; /* Add this line */
+    justify-content: center;
 }
 
 .inputLabel {
@@ -561,7 +528,7 @@ input:invalid[focused="true"] ~ span, textarea:invalid[focused="true"] ~ span {
     .header-title h1 {
         font-size: 15vw;
     }
-/*
+
     .header-subtitle h2 {
         text-align: center;
     }
@@ -569,8 +536,6 @@ input:invalid[focused="true"] ~ span, textarea:invalid[focused="true"] ~ span {
     .prompt-buttons {
         justify-content: center;
     }
-    */
-
 
     .prompt-container {
         max-width: 360px;
