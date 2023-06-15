@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import GenerateButton from './GenerateButton';
 
 const ContactForm = () => {
-  // ... (your existing form-related state and functions)
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
