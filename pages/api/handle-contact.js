@@ -9,13 +9,13 @@ export default async function (req, res) {
   const EMAIL_TO = process.env.EMAIL_TO;
 
   const transporter = nodemailer.createTransport({
-    port: 465,
+    port: 587,
     host: "premium195.web-hosting.com",
     auth: {
       user: USER,
       pass: PASSWORD,
     },
-    secure: true,
+    secure: false,
     tls: {
       rejectUnauthorized: false
     }
@@ -31,7 +31,6 @@ export default async function (req, res) {
    }
 
  await new Promise((resolve, reject) => {
-    // send mail
     transporter.sendMail(mailData, (err, response) => {
       if (err) {
         reject(err);
