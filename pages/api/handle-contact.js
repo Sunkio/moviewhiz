@@ -1,6 +1,6 @@
 import * as dotenv from 'dotenv';
 
-export default function (req, res) {
+export default async function (req, res) {
   //require('dotenv').config();
     dotenv.config();
   let nodemailer = require('nodemailer');
@@ -10,12 +10,15 @@ export default function (req, res) {
 
   const transporter = nodemailer.createTransport({
     port: 465,
-    host: "tanjaschmidt.com",
+    host: "premium195.web-hosting.com",
     auth: {
       user: USER,
       pass: PASSWORD,
     },
     secure: true,
+    tls: {
+      rejectUnauthorized: false
+    }
   });
 
   const mailData = {
@@ -26,13 +29,35 @@ export default function (req, res) {
     html: `<div>${req.body.message}</div><p>Sent from:
     ${req.body.email}</p>`,
    }
-   
-   transporter.sendMail(mailData, function (err, info) {
+
+ await new Promise((resolve, reject) => {
+    // send mail
+    transporter.sendMail(mailData, (err, response) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(response);
+        res.status(200).json({ message: 'Done!' })
+      }
+    });
+  });
+  /* transporter.sendMail(mailData, function (err, info) {
     if(err)
       console.log(err)
     else
-      console.log(info)
-  })
-
-  res.status(200)
+      console.log(info.response)
+       res.status(200).json({ message: 'Done!' })
+    /!* if (res) {
+       res.status(200)
+     }*!/
+  })*/
 }
+
+/*
+export const config = {
+  api: {
+    externalResolver: true,
+  },
+}*/
+
+
