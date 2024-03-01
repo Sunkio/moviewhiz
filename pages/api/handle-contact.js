@@ -62,18 +62,27 @@ export default async function (req, res) {
       }
     });
   });*/
-    await transporter.sendMail(mailData, /*(err, response) => {
+/*    await transporter.sendMail(mailData, /!*(err, response) => {
       if (err) {
         reject(err);
       } else {
         console.log(info);
         resolve(response);
       }
-    }*/
-    );
+    }*!/
+    );*/
+  
+  try {
+    await transport.sendMail(mailData)
+    return res.json({ message: "Success!", status: 200 })
+  } catch (err) {
+    return res.json({ message: "Failed!", status: 500 })
+  }
   
 
+/*
   res.status(200).json({ message: 'Done!' })
+*/
 /*   transporter.sendMail(mailData, function (err, info) {
     if(err)
       console.log(err)
