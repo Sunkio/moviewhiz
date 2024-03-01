@@ -30,15 +30,7 @@ export default async function (req, res) {
     ${req.body.email}</p>`,
    }
 
-   try {
-    await transporter.sendMail(mailData);
-    res.status(200).json({ message: "success" });
-   } catch (err) {
-    res.status (500).json({message: "an error occurred" })
-    console.log(err);
-   }
-
-/* await new Promise((resolve, reject) => {
+ await new Promise((resolve, reject) => {
     transporter.sendMail(mailData, (err, response) => {
       if (err) {
         reject(err);
@@ -47,7 +39,7 @@ export default async function (req, res) {
         res.status(200).json({ message: 'Done!' })
       }
     });
-  });*/
+  });
   /* transporter.sendMail(mailData, function (err, info) {
     if(err)
       console.log(err)
