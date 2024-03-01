@@ -10,13 +10,13 @@ export default async function (req, res) {
 
   const transporter = nodemailer.createTransport({
     service: 'gmail',
-    port: 465,
+    port: 587,
     host: 'smtp.gmail.com',
     auth: {
       user: USER,
       pass: PASSWORD,
     },
-    secure: true,
+    secure: false,
     tls: {
       rejectUnauthorized: false
     }
