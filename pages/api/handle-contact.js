@@ -9,14 +9,14 @@ export default  function (req, res) {
   const EMAIL_TO = process.env.EMAIL_TO;
 
   const transporter = nodemailer.createTransport({
-      service: 'gmail',
-    port: 587,
+    service: 'gmail',
+    port: 465,
     host: 'smtp.gmail.com',
     auth: {
       user: USER,
       pass: PASSWORD,
     },
-    secure: false,
+    secure: true,
     tls: {
       rejectUnauthorized: false
     }
