@@ -69,6 +69,7 @@ const ContactForm = () => {
           headers: {
               'Accept': 'application/json, text/plain, */*',
               'Content-Type': 'application/json',
+              'Allow': 'POST'
           },
           body: JSON.stringify(data),
       })
