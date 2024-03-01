@@ -1,8 +1,8 @@
 import * as dotenv from 'dotenv';
 
-export default async function (req, res) {
   //require('dotenv').config();
-    dotenv.config();
+  dotenv.config();
+export default async function (req, res) {
   let nodemailer = require('nodemailer');
   const PASSWORD = process.env.EMAIL_PW;
   const USER = process.env.EMAIL_USER;
@@ -21,19 +21,6 @@ export default async function (req, res) {
       rejectUnauthorized: false
     }
   });
-/*
-  await new Promise((resolve, reject) => {
-    // verify connection configuration
-    transporter.verify(function (error, success) {
-        if (error) {
-            console.log(error);
-            reject(error);
-        } else {
-            console.log("Server is ready to take our messages");
-            resolve(success);
-        }
-    });
-});*/
 
   const mailData = {
     from: USER,
@@ -44,45 +31,13 @@ export default async function (req, res) {
     ${req.body.email}</p>`,
    }
 
-/*   try {
-    await transporter.sendMail(mailData);
-    res.status(200).json({ message: "success" });
-   } catch (err) {
-    res.status (500).json({message: "an error occurred" })
-    console.log(err);
-   }*/
-/*
- await new Promise((resolve, reject) => {
-    transporter.sendMail(mailData, (err, response) => {
-      if (err) {
-        reject(err);
-      } else {
-        console.log(info);
-        resolve(response);
-      }
-    });
-  });*/
-/*    await transporter.sendMail(mailData, /!*(err, response) => {
-      if (err) {
-        reject(err);
-      } else {
-        console.log(info);
-        resolve(response);
-      }
-    }*!/
-    );*/
-  
-  try {
-    await transport.sendMail(mailData)
-    return res.json({ message: "Success!", status: 200 })
-  } catch (err) {
-    return res.json({ message: "Failed!", status: 500 })
-  }
-  
 
-/*
+    await transporter.sendMail(mailData);
+
+
+
   res.status(200).json({ message: 'Done!' })
-*/
+
 /*   transporter.sendMail(mailData, function (err, info) {
     if(err)
       console.log(err)
@@ -102,4 +57,36 @@ export const config = {
   },
 }*/
 
+// OLD IDEAS
+/*
+  await new Promise((resolve, reject) => {
+    // verify connection configuration
+    transporter.verify(function (error, success) {
+        if (error) {
+            console.log(error);
+            reject(error);
+        } else {
+            console.log("Server is ready to take our messages");
+            resolve(success);
+        }
+    });
+});*/
 
+/*   try {
+    await transporter.sendMail(mailData);
+    res.status(200).json({ message: "success" });
+   } catch (err) {
+    res.status (500).json({message: "an error occurred" })
+    console.log(err);
+   }*/
+/*
+ await new Promise((resolve, reject) => {
+    transporter.sendMail(mailData, (err, response) => {
+      if (err) {
+        reject(err);
+      } else {
+        console.log(info);
+        resolve(response);
+      }
+    });
+  });*/
