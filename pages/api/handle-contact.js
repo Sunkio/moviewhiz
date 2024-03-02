@@ -1,6 +1,5 @@
 import * as dotenv from 'dotenv';
-
-  //require('dotenv').config();
+//require('dotenv').config();
   dotenv.config();
 
 
@@ -19,8 +18,15 @@ export default async function (req, res) {
       pass: PASSWORD,
     },
     secure: true,
+    tls: {
+    // do not fail on invalid certs
+    rejectUnauthorized: false,
+  },
+  debug: true, // show debug output
+  logger: true // log information in console
   });
 
+/*
   await new Promise((resolve, reject) => {
     // verify connection configuration
     transporter.verify(function (error, success) {
@@ -33,6 +39,7 @@ export default async function (req, res) {
         }
     });
 });
+  */
   
   const mailData = {
     from: USER,
@@ -45,16 +52,8 @@ export default async function (req, res) {
 
 await new Promise((resolve, reject) => {
     // send mail
-    transporter.sendMail(mailData, (err, info) => {
-        if (err) {
-            console.error(err);
-            reject(err);
-        } else {
-            console.log(info);
-            resolve(info);
-        }
-    });
+    transporter.sendMail(mailData);
 });
 
-res.status(200).json({ status: "OK" });
+//res.status(200).json({ status: "OK" });
 };
