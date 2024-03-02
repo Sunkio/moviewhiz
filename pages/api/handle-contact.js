@@ -12,13 +12,13 @@ export default async function (req, res) {
   const EMAIL_HOST = process.env.EMAIL_HOST;
 
   const transporter = nodemailer.createTransport({
-    port: 587,
+    port: 465,
     host: EMAIL_HOST,
     auth: {
       user: USER,
       pass: PASSWORD,
     },
-    secure: false,
+    secure: true,
   });
 
   await new Promise((resolve, reject) => {
