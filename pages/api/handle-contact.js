@@ -52,8 +52,14 @@ export default async function (req, res) {
 
 await new Promise((resolve, reject) => {
     // send mail
-    transporter.sendMail(mailData);
+    transporter.sendMail(mailData, (err, response) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(response);
+      }
+    });
 });
 
-//res.status(200).json({ status: "OK" });
+  res.status(200).json({ status: "OK" });
 };
