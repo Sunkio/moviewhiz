@@ -50,7 +50,7 @@ export default async function (req, res) {
     ${req.body.email}</p>`,
   }
 
-await new Promise((resolve, reject) => {
+  await new Promise((resolve, reject) => {
     // send mail
     transporter.sendMail(mailData, (err, response) => {
       if (err) {
@@ -59,7 +59,7 @@ await new Promise((resolve, reject) => {
         resolve(response);
       }
     });
-});
+  });
 
   res.status(200).json({ status: "OK" });
 };
